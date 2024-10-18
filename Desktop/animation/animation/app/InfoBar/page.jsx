@@ -8,13 +8,15 @@ const InfoBar = () => {
       padding: '50px 0', 
       fontFamily: 'Arial, sans-serif' 
     }}>
-      <h2 style={{ 
-        color: '#121858', 
-        fontSize: '32px', 
-        marginBottom: '10px' 
-      }}>
-        How does it work?
-      </h2>
+     <h2 style={{ 
+  color: '#030f97', 
+  fontSize: '32px', 
+  marginBottom: '10px', 
+  fontWeight: 'bold' // or use '700' for bold
+}}>
+  How does it work?
+</h2>
+
       <p style={{ 
         color: '#5D5D6C', 
         fontSize: '18px', 

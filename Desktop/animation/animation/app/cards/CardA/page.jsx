@@ -3,7 +3,7 @@ import { FaFont, FaHashtag, FaCalendarAlt, FaLock, FaEnvelope, FaToggleOn, FaReg
 
 const ContentTypeCardA = () => {
   return (
-    <div className=" w-[440px] mx-auto h-[350px] p-2 mt-[100px]  bg-white shadow-xl rounded-lg">
+    <div className=" w-[500px] mx-auto h-[350px] p-2 mt-[100px]  bg-white shadow-xl rounded-lg">
       <h2 className="text-center text-lg font-semibold text-gray-700 mb-4">Select a field for your Content Type</h2>
       <div className="grid grid-cols-2 gap-4 ">
         {/* String */}

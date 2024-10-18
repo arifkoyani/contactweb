@@ -3,7 +3,7 @@ import { FaBold, FaItalic, FaUnderline, FaCode, FaImage } from "react-icons/fa";
 
 const ContentFormCard = () => {
   return (
-    <div className="w-[450px] mx-auto h-[350px] p-4 bg-white rounded-lg shadow-xl">
+    <div className="w-[500px] mx-auto h-[350px] p-4 bg-white rounded-lg shadow-xl">
       {/* Header with the Save Button */}
       <div className="flex justify-between items-center mb-4">
         <div className="w-4 h-4 flex space-x-1">
