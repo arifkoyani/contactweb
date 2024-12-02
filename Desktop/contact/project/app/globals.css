@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 113, 145, 230;
+  --background-end-rgb: 61, 82, 160;
+}
+
+@layer base {
+  body {
+    @apply text-white;
+  }
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-40px);
+  }
+}
+
+.animate-slide {
+  animation: slide 3s linear infinite;
+}
