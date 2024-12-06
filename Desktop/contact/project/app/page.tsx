@@ -1,12 +1,11 @@
 "use client"
 import { use, useEffect, useState } from 'react';
 import { IconInfoCircle } from '@tabler/icons-react';
-import { Notification } from '@mantine/core';
+import { Toaster, toast } from 'sonner';
 import { Github, Facebook, Instagram, Globe, MessageCircle, Music2 } from 'lucide-react';
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);
-  const [alert, setAlert] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -14,8 +13,8 @@ export default function Home() {
 
 useEffect(()=>{
 setInterval(()=>{
-  setAlert(true);
-},1000)
+  toast.loading("This is a toast message!")
+},5000)
 },[])
 
   if (!mounted) return null;
@@ -62,17 +61,12 @@ setInterval(()=>{
 
   return (
     <main className="min-h-screen relative overflow-hidden">
-      {
-        alert && (
-          <Notification>
-          You are now obligated to give a star to Mantine project on GitHub
-        </Notification>
-        )
-      }
+
       {/* Animated background */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#7191e6] via-[#3d52a0] to-[#8697c3]">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,...')] animate-slide"></div>
       </div>
+      <Toaster />
 
       <div className="relative z-10 max-w-md mx-auto min-h-screen flex flex-col items-center justify-center px-4 py-16 text-white">
         {/* Alert Section */}
