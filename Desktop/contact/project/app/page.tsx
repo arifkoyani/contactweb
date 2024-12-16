@@ -2,6 +2,8 @@
 import { use, useEffect, useState } from 'react';
 import { IconInfoCircle } from '@tabler/icons-react';
 import { Toaster, toast } from 'sonner';
+import Ayatains from "../Ayats/page"
+import Blockquotee from "../Ayats/Blockquote/page"
 import { Github, Facebook, Instagram, Globe, MessageCircle, Music2 } from 'lucide-react';
 
 export default function Home() {
@@ -13,8 +15,8 @@ export default function Home() {
 
 useEffect(()=>{
 setInterval(()=>{
-  toast.loading("This is a toast message!")
-},5000)
+  toast.loading("May Allah reward you for your good deeds. 🌟🙏")
+},8000)
 },[])
 
   if (!mounted) return null;
@@ -60,32 +62,30 @@ setInterval(()=>{
   ];
 
   return (
-    <main className="min-h-screen relative overflow-hidden">
-
-      {/* Animated background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#7191e6] via-[#3d52a0] to-[#8697c3]">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,...')] animate-slide"></div>
-      </div>
+    <>
       <Toaster />
+    
+    <main className="min-h-screen bg-black overflow-hidden">
+<Blockquotee/>
+   
 
-      <div className="relative z-10 max-w-md mx-auto min-h-screen flex flex-col items-center justify-center px-4 py-16 text-white">
-        {/* Alert Section */}
+      <div className="relative z-10 max-w-md mx-auto  flex flex-col items-center justify-center px-4 py-2 text-white">
+
      
 
         <h1 className="text-4xl font-bold text-center mb-2">Jazakallah ul khair</h1>
-        <p className="text-sm font-light text-center mb-12 opacity-90">
+        <p className="text-sm font-light text-center mb-5 opacity-90">
           May Allah reward you with goodness
         </p>
 
-        <div className="w-full space-y-4">
+        <div className="w-full space-y-2">
           {socialLinks.map((link) => (
             <a
               key={link.name}
               href={link.url}
               target="_blank"
               className={`flex target-blank items-center justify-center space-x-3 w-full p-4 rounded-lg 
-                bg-white/10 backdrop-blur-sm transition-all duration-300 
-                ${link.color} hover:scale-105`}
+                bg-white/10 backdrop-blur-sm transition-all duration-300  hover:scale-110`}
             >
               {link.icon}
               <span className="font-medium">{link.name}</span>
@@ -93,6 +93,13 @@ setInterval(()=>{
           ))}
         </div>
       </div>
+
+      <div>
+
+      <Ayatains/>
+      </div>
     </main>
+    </>
+
   );
 }
