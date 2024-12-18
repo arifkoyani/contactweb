@@ -15,11 +15,25 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function SignUpForm() {
-  const [date, setDate] = useState<Date>();
   const [step, setStep] = useState("personal");
+  const [Fname,setFname]=useState<string>();
+  const [Lname,setLname]=useState<string>()
+  const [MiddleName,setMiddleName]=useState<string>()
+  const [UserName,setUserName]=useState<string>();
+  const [Email,setEmail]=useState<string>();
+  const [PhoneNumber,setPhoneNumber]=useState<string>();
+  const [DOB,setDOB]=useState<Date>();
+  const [Gender,setGender]=useState<string | undefined>()
+  const [Nationality,setNationality]=useState<string>()
+  const [Country ,setCountry]=useState<string |undefined>();
+  const [City,setCity]=useState<string | undefined>();
+  const [Address,setAddress]=useState<string | undefined>(); 
+
+
+
 
   return (
-    <div className=" bg-gradient-to-br from-indigo-50 via-white to-purple-50 p-6 flex items-center justify-center">
+    <div className=" min-w-fit bg-gradient-to-br from-indigo-50 via-white to-purple-50 p-6 flex items-center justify-center">
       <Card className="w-full max-w-4xl shadow-xl">
         <CardHeader className="text-center">
           <CardTitle className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
@@ -41,27 +55,27 @@ export default function SignUpForm() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <Label htmlFor="firstName">First Name</Label>
-                  <Input id="firstName" placeholder="John" />
+                  <Input id="firstName" onChange={(e)=>setFname(e.target.value)} placeholder="John" />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="lastName">Last Name</Label>
-                  <Input id="lastName" placeholder="Doe" />
+                  <Input id="lastName" onChange={(e)=>setLname(e.target.value)} placeholder="Doe" />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="middleName">Middle Name</Label>
-                  <Input id="middleName" placeholder="William" />
+                  <Input id="middleName" onChange={(e)=>setMiddleName(e.target.value)} placeholder="William" />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="username">Username</Label>
-                  <Input id="username" placeholder="johndoe123" />
+                  <Input id="username"  onChange={(e)=>setUserName(e.target.value)} placeholder="johndoe123" />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="email">Email Address</Label>
-                  <Input id="email" type="email" placeholder="john@example.com" />
+                  <Input id="email" type="email" onChange={(e)=>setEmail(e.target.value)} placeholder="john@example.com" />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="phone">Phone Number</Label>
-                  <Input id="phone" type="tel" placeholder="+1 (555) 000-0000" />
+                  <Input id="phone" type="tel" onChange={(e)=>setPhoneNumber(e.target.value)} placeholder="+1 (555) 000-0000" />
                 </div>
                 <div className="space-y-2">
                   <Label>Date of Birth</Label>
@@ -71,18 +85,18 @@ export default function SignUpForm() {
                         variant="outline"
                         className={cn(
                           "w-full justify-start text-left font-normal",
-                          !date && "text-muted-foreground"
+                          !DOB && "text-muted-foreground"
                         )}
                       >
                         <CalendarIcon className="mr-2 h-4 w-4" />
-                        {date ? format(date, "PPP") : "Pick a date"}
+                        {DOB ? format(DOB, "PPP") : "Pick a date"}
                       </Button>
                     </PopoverTrigger>
                     <PopoverContent className="w-auto p-0">
                       <Calendar
                         mode="single"
-                        selected={date}
-                        onSelect={setDate}
+                       selected={DOB}
+                        onSelect={setDOB}
                         initialFocus
                       />
                     </PopoverContent>
@@ -90,9 +104,9 @@ export default function SignUpForm() {
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="gender">Gender</Label>
-                  <Select>
+                  <Select value={Gender} onValueChange={setGender}>
                     <SelectTrigger>
-                      <SelectValue placeholder="Select gender" />
+                      <SelectValue placeholder="Select gender"  />
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="male">Male</SelectItem>
@@ -106,19 +120,19 @@ export default function SignUpForm() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <Label htmlFor="nationality">Nationality</Label>
-                  <Input id="nationality" placeholder="Your nationality" />
+                  <Input id="nationality" placeholder="Your nationality" onChange={(e)=>setNationality(e.target.value)} />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="country">Country</Label>
-                  <Input id="country" placeholder="Your country" />
+                  <Input id="country" placeholder="Your country" onChange={(e)=>setCountry(e.target.value)} />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="city">City</Label>
-                  <Input id="city" placeholder="Your city" />
+                  <Input id="city" placeholder="Your city" onChange={(e)=>setCity(e.target.value)} />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="address">Street Address</Label>
-                  <Input id="address" placeholder="123 Main St" />
+                  <Input id="address" placeholder="123 Main St" onChange={(e)=>setAddress(e.target.value)} />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="postal">Postal/ZIP Code</Label>

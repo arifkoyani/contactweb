@@ -104,7 +104,7 @@ export default function Home() {
         </div>
 
         <div>
-          <div>
+          <div className="flex justify-center items-center w-screen">
             <Modal
               opened={opened}
               onClose={close}
@@ -115,7 +115,6 @@ export default function Home() {
                 content: { padding: "16px" }, // Adjusts padding for the content
               }}
             >
-              <SignUpForm />
             </Modal>
 
             <div>
@@ -124,7 +123,7 @@ export default function Home() {
 
 <Button
   variant="white"
-  className="bg-white text-orange-500"
+  className="bg-white text-orange-500 px-10"
   onClick={open}
 >
   Fill the FORM
@@ -142,6 +141,9 @@ export default function Home() {
 
        
         </div>
+
+        <SignUpForm />
+
       </main>
     </>
   );
